@@ -1,23 +1,25 @@
 import React from 'react';
-import { Button, Container, Nav, Navbar } from 'react-bootstrap';
+import { Button, Container, Image, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import logo from '../../../../public/chef-hat.png'
+import './Header.css'
 
 const Header = () => {
     const user = {};
     return (
-        <Navbar collapseOnSelect expand="lg" bg="success" variant="dark">
+        <Navbar collapseOnSelect expand="lg" className='navbar-color' variant="dark">
             <Container>
-                <Navbar.Brand href="#home">Taco-Town</Navbar.Brand>
+                <Image src={logo} className='banner-logo ps-5'/>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
-                    <Nav className="mx-auto">
-                        <Link className='text-white mx-2 text-decoration-none' to="/">Home</Link>
-                        <Link className='text-white mx-2 text-decoration-none' to="/">Blog</Link>
+                    <Nav className="mx-auto ps-3">
+                        <Link className='text-white mx-3 text-decoration-none fs-6' to="/">Home</Link>
+                        <Link className='text-white mx-4 text-decoration-none fs-6' to="/">Blog</Link>
                     </Nav>
                     <Nav>
                         {user ?
-                            <Button variant="success">Logout</Button> :
-                            <Button variant="success">Login</Button>
+                            <Button className='button-color fs-5'>Logout</Button> :
+                            <Button className='button-color fs-5'>Login</Button>
                         }
                     </Nav>
                 </Navbar.Collapse>

@@ -10,7 +10,7 @@ const Banner = () => {
             <div className='center-text'>
                 <h1>Real Food. Real Simple</h1>
                 <p>Premium Health Recipes</p>
-                <Button variant='success'>Discover Now</Button>
+                <Button className='button-color w-50'>Discover Now</Button>
             </div>
         </div>
     );

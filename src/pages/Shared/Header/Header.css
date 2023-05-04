@@ -1,0 +1,19 @@
+.banner-logo{
+    height: 90px;
+}
+
+.navbar-color{
+    background-color: #2db83d;
+}
+
+.button-color{
+    background-color: #2db83d;
+    width: 120px;
+    border: none;
+    border-radius: 50px;
+}
+
+.button-color:hover{
+    color: black;
+    background-color: #25f13d;
+}
