@@ -2,28 +2,39 @@ import React, { useContext } from 'react';
 import { Button } from 'react-bootstrap';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
 import { AuthContext } from '../../../Provider/AuthProvider';
+import { toast } from 'react-toastify';
 
 const GoogleSignIn = () => {
     const { googleSignIn, githubSignIn } = useContext(AuthContext);
 
     const handleGoogleSignIn = () => {
         googleSignIn()
-        .then(result => {
-            console.log(result.user);
-        })
-        .catch(error => {
-            console.log(error.message);
-        })
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                toast("Successfully logged-in")
+            })
+            .catch(error => {
+                const errorMessage = error.message;
+                if (errorMessage) {
+                    toast("Error")
+                }
+            })
     }
 
     const handleGithubSignIn = () => {
         githubSignIn()
-        .then(result => {
-            console.log(result.user);
-        })
-        .catch(error => {
-            console.log(error.message);
-        })
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                toast("Successfully logged-in")
+            })
+            .catch(error => {
+                const errorMessage = error.message;
+                if (errorMessage) {
+                    toast("Error")
+                }
+            })
     }
     return (
         <div className='mt-5'>
