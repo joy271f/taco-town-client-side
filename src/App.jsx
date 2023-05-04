@@ -5,7 +5,6 @@ function App() {
 
   return (
     <>
-       <Button variant="success">Success</Button>
     </>
   )
 }
