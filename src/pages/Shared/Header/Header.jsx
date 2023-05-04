@@ -5,7 +5,7 @@ import logo from '../../../../public/chef-hat.png'
 import './Header.css'
 
 const Header = () => {
-    const user = {};
+    const user = null;
     return (
         <Navbar collapseOnSelect expand="lg" className='navbar-color' variant="dark">
             <Container>
@@ -16,12 +16,11 @@ const Header = () => {
                         <Link className='text-white mx-3 text-decoration-none fs-6' to="/">Home</Link>
                         <Link className='text-white mx-4 text-decoration-none fs-6' to="/">Blog</Link>
                     </Nav>
-                    <Nav>
                         {user ?
                             <Button className='button-color fs-5'>Logout</Button> :
-                            <Button className='button-color fs-5'>Login</Button>
+                            <Link to='/login'><Button className='button-color fs-5'>Login</Button></Link>
                         }
-                    </Nav>
+                        <Link to='/register'><Button className='button-color fs-5'>Register</Button></Link>
                 </Navbar.Collapse>
             </Container>
         </Navbar>
