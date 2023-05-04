@@ -3,7 +3,7 @@ import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
-    const user = null;
+    const user = {};
     return (
         <Navbar collapseOnSelect expand="lg" bg="success" variant="dark">
             <Container>
