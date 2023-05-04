@@ -3,17 +3,17 @@
 }
 
 .navbar-color{
-    background-color: #2db83d;
+    background-color: #1c2331;
 }
 
 .button-color{
-    background-color: #2db83d;
+    background-color: #1c2331;
     width: 120px;
     border: none;
     border-radius: 50px;
 }
 
 .button-color:hover{
-    color: black;
-    background-color: #25f13d;
+    color: rgb(255, 255, 255);
+    background-color: #6351ce;
 }
