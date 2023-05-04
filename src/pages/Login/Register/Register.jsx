@@ -2,10 +2,11 @@ import React from 'react';
 import { Button, Col, Container, Form, Row } from 'react-bootstrap';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import GoogleSignIn from '../GoogleSignIn/GoogleSignIn';
 
 const Register = () => {
     return (
-        <Container className='w-50  mt-5'>
+        <Container className='w-50 mt-5'>
             <Row>
                 <Col sm={8}>
                     <h3>Please Register</h3>
@@ -43,8 +44,7 @@ const Register = () => {
                     </Form>
                 </Col>
                 <Col sm={4}>
-                    <Button bg='light' variant='primary' className='w-100 my-2'><FaGoogle /> Sign in with Google</Button>
-                    <Button bg='dark' variant='dark' className='w-100 my-2'><FaGithub /> Sign in with Github</Button>
+                    <GoogleSignIn></GoogleSignIn>
                 </Col>
             </Row>
 
