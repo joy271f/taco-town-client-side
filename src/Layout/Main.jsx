@@ -11,7 +11,7 @@ const Main = () => {
             <Header />
             <Outlet />
             <Footer />
-            <ToastContainer />
+            <ToastContainer theme="colored"/>
         </div>
     );
 };

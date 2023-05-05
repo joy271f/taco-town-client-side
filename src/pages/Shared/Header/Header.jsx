@@ -4,18 +4,19 @@ import { Link } from 'react-router-dom';
 import logo from '../../../../public/chef-hat.png'
 import './Header.css'
 import { AuthContext } from '../../../Provider/AuthProvider';
+import { toast } from 'react-toastify';
 
 const Header = () => {
     const { user, logout } = useContext(AuthContext);
-
     const handleLogout = () => {
         logout()
-        .then(result => {
-            const user = result.user;
-        })
-        .catch(error => {
-            console.log(error.message);
-        })
+            .then(result => {
+                const user = result.user;
+                toast.success("Successfully logout")
+            })
+            .catch(error => {
+                console.log(error.message);
+            })
     }
 
     return (
@@ -28,9 +29,15 @@ const Header = () => {
                         <Link className='text-white mx-3 text-decoration-none fs-6' to="/">Home</Link>
                         <Link className='text-white mx-4 text-decoration-none fs-6' to="/">Blog</Link>
                     </Nav>
-                    <p className='text-light'>{user?.email}</p>
-                    {user?.email ? <Link onClick={handleLogout}><Button className='button-color fs-5'>Logout</Button></Link> : <Link to='/login'><Button className='button-color fs-5'>Login</Button></Link>}
-                    <Link to='/register'><Button className='button-color fs-5'>Register</Button></Link>
+                    {
+                        user?.email ?
+                        <>
+                                <Image src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" className='header-img' roundedCircle/>
+                                <Link onClick={handleLogout}><Button className='button-color fs-5'>Logout</Button></Link>
+                            </> :
+                            <Link to='/login'><Button className='button-color fs-5'>Login</Button></Link>
+                    }
+                    {!user && <Link to='/register'><Button className='button-color fs-5'>Register</Button></Link>}
                 </Navbar.Collapse>
             </Container>
         </Navbar>

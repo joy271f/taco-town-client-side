@@ -1,32 +1,40 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './ChefSection.css';
 import { Button, Card, Col, Container, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const ChefSection = () => {
+    const [chefs, setChefs] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:5000/chef')
+            .then(res => res.json())
+            .then(data => setChefs(data))
+    }, [])
     return (
-        <Container className='mt-5 row mx-auto'>
+        <div>
             <h3 className='text-center mt-5'>Chef Bio</h3>
-            <hr
-                className="mb-4 mt-0 d-inline-block mx-auto"
-                style={{ width: '60px', backgroundColor: '#7c4dff', height: '2px' }}
-            />
-            <Row xs={1} md={3} className="g-4">
-                {Array.from({ length: 6 }).map((_, idx) => (
-                    <Col>
-                        <Card>
-                            <Card.Img variant="top" src="https://rb.gy/0782c" />
+            <Container className='chef-card'>
+            {
+                chefs.map((chef) => (
+                    <div key={chef.id} className='mt-5'>
+                        <Card className='' style={{ width: '18rem' }}>
+                            <Card.Img variant="top" className='card-img' src={chef.img} />
                             <Card.Body>
-                                <Card.Title>Water Son</Card.Title>
-                                <Card.Text>
-                                    Working in a kitchen as a chef can be a fast-paced, exciting job. There are many different types of chefs, each with a specific station and responsibilities. Learning about the different
+                                <Card.Title>{chef.name}</Card.Title>
+                                <p className='mb-1'>Year of Experience: {chef?.year_of_experience}</p>
+                                <p className='mb-1'>Number of Recipe: {chef?.number_of_recipes}</p>
+                                <Card.Text className='mb-4'>
+                                    Likes: {chef?.likes}
                                 </Card.Text>
-                                <Button className='button-color'>Details</Button>
+                                <Link to={`/chef-details/${chef.id}`}><Button variant="primary" className='button-color'>Chef Details</Button></Link>
                             </Card.Body>
                         </Card>
-                    </Col>
-                ))}
-            </Row>
+                    </div>
+                ))
+            }
         </Container>
+        </div>
     );
 };
 
