@@ -1,7 +1,6 @@
 import React from 'react';
 import './ChefSection.css';
 import { Button, Card, Col, Container, Row } from 'react-bootstrap';
-import { useLoaderData } from 'react-router-dom';
 
 const ChefSection = () => {
     return (

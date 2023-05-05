@@ -11,7 +11,6 @@ const GoogleSignIn = () => {
         googleSignIn()
             .then(result => {
                 const user = result.user;
-                console.log(user);
                 toast("Successfully logged-in")
             })
             .catch(error => {
@@ -26,7 +25,6 @@ const GoogleSignIn = () => {
         githubSignIn()
             .then(result => {
                 const user = result.user;
-                console.log(user);
                 toast("Successfully logged-in")
             })
             .catch(error => {

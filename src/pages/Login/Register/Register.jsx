@@ -11,19 +11,22 @@ const Register = () => {
     const [photoURL, setPhotoURL] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+    const [success, setSuccess] = useState("")
     const [error, setError] = useState("")
 
 const handleRegistration = (e) => {
     e.preventDefault()
-    if(!/"^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"/.test(password)){
-        setError("Minimum eight characters, at least one letter and one number")
+    const form = e.target;
+    if(!/(?=.*?[A-Z])/.test(password)){
+        setError("At least one upper case")
         return;
     }
-    if(name, email, password){
-        registerUser(name, email, password)
+    if(email, password){
+        registerUser(email, password)
         .then(result => {
             const user = result.user;
             toast("Logged in")
+            setSuccess("You are registered")
         }).catch(error => {
             setError(error.message)
             toast("Error")
@@ -64,6 +67,9 @@ const handleRegistration = (e) => {
                         <Form.Text className="text-secondary">
                             Already Have An Account ? <Link to='/login'>Login</Link>
                         </Form.Text> <br />
+                        <Form.Text className="text-success">
+                            {success}
+                        </Form.Text>
                         <Form.Text className="text-danger">
                             {error}
                         </Form.Text>
