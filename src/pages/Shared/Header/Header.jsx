@@ -1,8 +1,7 @@
 import React, { useContext } from 'react';
 import { Button, Container, Image, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import logo from '../../../../public/chef-hat.png'
-import './Header.css'
+import './Header.css';
 import { AuthContext } from '../../../Provider/AuthProvider';
 import { toast } from 'react-toastify';
 
@@ -22,7 +21,7 @@ const Header = () => {
     return (
         <Navbar collapseOnSelect expand="lg" className='navbar-color' variant="dark">
             <Container>
-                <Image src={logo} className='banner-logo ps-5' />
+                <Image src="/public/chef-hat.png" className='banner-logo ps-5' />
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mx-auto ps-3">

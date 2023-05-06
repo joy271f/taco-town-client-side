@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     /* text-align: center; */
-    margin-right: 40px;
+    /* margin-right: 40px; */
 }
 
 @media screen and (max-width: 576px) {
@@ -10,12 +10,12 @@
         display: grid;
         grid-template-columns: repeat(1, 1fr);
         text-align: center;
-        margin-left: 40px;
+        margin: 0 auto;
     }
   }
 
 .card-img{
-    height: 30vh;
+    height: 38vh;
     padding: 5px;
     border-radius: 10px;
 }

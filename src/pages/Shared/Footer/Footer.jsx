@@ -73,16 +73,16 @@ const Footer = () => {
                                     style={{ width: '60px', backgroundColor: '#7c4dff', height: '2px' }}
                                 />
                                 <p>
-                                    <Link to="#!" className="text-white">item 1</Link>
+                                    <Link to="#!" className="text-white">Pico de Gallo</Link>
                                 </p>
                                 <p>
-                                    <Link to="#!" className="text-white">item 2</Link>
+                                    <Link to="#!" className="text-white">Huevos Rancheros</Link>
                                 </p>
                                 <p>
-                                    <Link to="#!" className="text-white">item 3</Link>
+                                    <Link to="#!" className="text-white">Chimichangas</Link>
                                 </p>
                                 <p>
-                                    <Link to="#!" className="text-white">item 4</Link>
+                                    <Link to="#!" className="text-white">Tostadas</Link>
                                 </p>
                             </div>
                             {/* Grid column  */}
@@ -96,16 +96,16 @@ const Footer = () => {
                                     style={{ width: '60px', backgroundColor: '#7c4dff', height: '2px' }}
                                 />
                                 <p>
-                                    <Link to="#!" className="text-white">Chef 1</Link>
+                                    <Link to="#!" className="text-white">Javier Plascencia</Link>
                                 </p>
                                 <p>
-                                    <Link to="#!" className="text-white">Chef 2</Link>
+                                    <Link to="#!" className="text-white">David Castro Hussong</Link>
                                 </p>
                                 <p>
-                                    <Link to="#!" className="text-white">Chef 3</Link>
+                                    <Link to="#!" className="text-white">Margarita Carrillo Arronte</Link>
                                 </p>
                                 <p>
-                                    <Link to="#!" className="text-white">Chef 4</Link>
+                                    <Link to="#!" className="text-white">Enrique Olvera</Link>
                                 </p>
                             </div>
                             {/* Grid column  */}

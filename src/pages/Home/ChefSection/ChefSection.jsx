@@ -13,18 +13,18 @@ const ChefSection = () => {
     }, [])
     return (
         <div>
-            <h3 className='text-center mt-5'>Chef Bio</h3>
+            <h3 className='text-center text-danger'>Chef Bio</h3>
             <Container className='chef-card'>
             {
                 chefs.map((chef) => (
                     <div key={chef.id} className='mt-5'>
-                        <Card className='' style={{ width: '18rem' }}>
-                            <Card.Img variant="top" className='card-img' src={chef.img} />
+                        <Card className='m-2'>
+                            <Card.Img variant="top" className='card-img img-fluid' src={chef.img} />
                             <Card.Body>
-                                <Card.Title>{chef.name}</Card.Title>
-                                <p className='mb-1'>Year of Experience: {chef?.year_of_experience}</p>
-                                <p className='mb-1'>Number of Recipe: {chef?.number_of_recipes}</p>
-                                <Card.Text className='mb-4'>
+                                <Card.Title className='mx-1'>{chef.name}</Card.Title>
+                                <Card.Text className='mb-1 mx-1'>Year of Experience: {chef?.year_of_experience}</Card.Text>
+                                <Card.Text className='mb-1 mx-1'>Number of Recipe: {chef?.number_of_recipes}</Card.Text>
+                                <Card.Text className='mb-3 mx-1'>
                                     Likes: {chef?.likes}
                                 </Card.Text>
                                 <Link to={`/chef-details/${chef.id}`}><Button variant="primary" className='button-color'>Chef Details</Button></Link>

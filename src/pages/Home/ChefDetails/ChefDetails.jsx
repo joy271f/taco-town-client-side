@@ -24,7 +24,7 @@ const ChefDetails = () => {
                         <Card className='' style={{ width: '23rem' }}>
                             <Card.Img variant="top" src={img} />
                             <Card.Body>
-                                <Card.Title>{chef.name}</Card.Title>
+                                <Card.Title>{name}</Card.Title>
                                 <Card.Text className='mb-4'>
                                 <span className='text-danger'>Bio:</span> {short_bio}
                                 </Card.Text>
