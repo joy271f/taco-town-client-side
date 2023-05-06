@@ -29,10 +29,10 @@ const ChefDetails = () => {
             {chef && chefDetailsData ?
                 <Container>
                     <Row>
-                        <Col sm={4}>
+                        <Col lg={4} sm={12}>
                             <h2 className='my-5 text-danger'>Chef Details</h2>
                             <Card className='' style={{ width: '23rem' }}>
-                                <Card.Img variant="top" src={img} />
+                                <Card.Img variant="top" style={{objectFit: 'cover'}} src={img} />
                                 <Card.Body>
                                     <Card.Title>{name}</Card.Title>
                                     <Card.Text className='mb-4'>
@@ -46,13 +46,13 @@ const ChefDetails = () => {
                                 </Card.Body>
                             </Card>
                         </Col>
-                        <Col sm={8}>
+                        <Col lg={8} sm={12}>
                             <h2 className='my-5 text-secondary mx-4'>{name}'s Recipes</h2>
                             {
                                 chefDetailsData.map(chefDetails => (
                                     <div key={chefDetails._id}>
-                                        <Card className='mx-auto my-5 box-style' style={{ width: '50rem' }}>
-                                            <Card.Img variant="top" className='details-img' src={chefDetails?.image} />
+                                        <Card className='card-size mx-auto my-5 box-style'>
+                                            <Card.Img variant="top" className='details-card-img' src={chefDetails?.image} />
                                             <Card.Body>
                                                 <Card.Title>Recipe Name: {chefDetails?.recipe_name}</Card.Title>
                                                 <Card.Text>
