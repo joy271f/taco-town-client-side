@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import { Button, Card, Col, Container, Row } from 'react-bootstrap';
+import { Button, Card, Col, Container, Row, Spinner } from 'react-bootstrap';
 import { useLoaderData, useParams } from 'react-router-dom';
-import './ChefDetails.css'
+import './ChefDetails.css';
+
+
 
 const ChefDetails = () => {
-    const {id} = useParams();
+
+
+    const { id } = useParams();
     const [chef, setChef] = useState([]);
     const chefDetailsData = useLoaderData();
     const { name, year_of_experience, number_of_recipes, likes, img, short_bio } = chef;
@@ -13,10 +17,15 @@ const ChefDetails = () => {
             .then(res => res.json())
             .then(data => setChef(data))
     }, [])
+
+
+
+
     return (
 
         <div>
-            <Container>
+            {chef && chefDetailsData ?
+                <Container>
                 <Row>
                     <Col sm={4}>
                         <h2 className='my-5 text-danger'>Chef Details</h2>
@@ -25,7 +34,7 @@ const ChefDetails = () => {
                             <Card.Body>
                                 <Card.Title>{name}</Card.Title>
                                 <Card.Text className='mb-4'>
-                                <span className='text-danger'>Bio:</span> {short_bio}
+                                    <span className='text-danger'>Bio:</span> {short_bio}
                                 </Card.Text>
                                 <p className='mb-1'><span className='text-danger'>Year of Experience:</span> {year_of_experience}</p>
                                 <p className='mb-1'><span className='text-danger'>Number of Recipe:</span> {number_of_recipes}</p>
@@ -61,9 +70,12 @@ const ChefDetails = () => {
                         }
                     </Col>
                 </Row>
-            </Container>
+            </Container> :
+            <div style={{height:'60vh'}} className='text-center mt-5'>
+                <Spinner animation="border" variant="danger" />
+            </div>
+            }
         </div>
     );
 };
-
 export default ChefDetails;
