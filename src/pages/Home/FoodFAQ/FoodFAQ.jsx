@@ -4,7 +4,7 @@ import { Accordion, Container } from 'react-bootstrap';
 const FoodFAQ = () => {
     return (
         <Container className='my-5'>
-            <h4 className='my-5 text-center text-danger'>Food FAQ</h4>
+            <h4 className='my-5 text-center text-danger'>FAQ's</h4>
             <Accordion className='w-75 mx-auto' defaultActiveKey="0">
                 <Accordion.Item eventKey="0">
                     <Accordion.Header>What are food additives?</Accordion.Header>

@@ -1,19 +1,38 @@
-.chef-card{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+.chef-card-container{
+    background-color: #ff04210f;
+    padding: 100px;
 }
+.chef-card {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+
+
+.card-img {
+  width: 100vw;
+  height: 50vh;
+  object-fit: cover;
+}
+
+
 
 @media screen and (max-width: 576px) {
-    .chef-card{
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-        text-align: center;
-        margin: 0 auto;
+    .chef-card {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      text-align: center;
+      margin: 0 auto;
+    }
+  
+    .chef-card-container{
+      background-color: #ff04210f;
+      padding: 0;
+  }
+  
+    .card-img {
+      /* width: 100vw; */
+      /* height: 100vh; */
+      object-fit: cover;
     }
   }
-
-.card-img{
-    height: 38vh;
-    padding: 5px;
-    border-radius: 10px;
-}

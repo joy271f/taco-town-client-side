@@ -12,8 +12,8 @@ const ChefSection = () => {
             .then(data => setChefs(data))
     }, [])
     return (
-        <div>
-            <h3 className='text-center text-danger'>Chef Bio</h3>
+        <div className='chef-card-container'>
+            <h3 className='text-center text-danger'>Our Top Chef's</h3>
             <Container className='chef-card'>
             {
                 chefs.map((chef) => (
