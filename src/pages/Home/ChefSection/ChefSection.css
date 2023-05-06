@@ -1,8 +1,6 @@
 .chef-card{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    /* text-align: center; */
-    /* margin-right: 40px; */
 }
 
 @media screen and (max-width: 576px) {

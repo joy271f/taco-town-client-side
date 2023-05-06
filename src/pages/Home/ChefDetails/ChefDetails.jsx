@@ -37,6 +37,7 @@ const ChefDetails = () => {
                         </Card>
                     </Col>
                     <Col sm={8}>
+                        <h2 className='my-5 text-secondary mx-4'>His Achievement</h2>
                         {
                             chefDetailsData.map(chefDetails => (
                                 <div key={chefDetails._id}>

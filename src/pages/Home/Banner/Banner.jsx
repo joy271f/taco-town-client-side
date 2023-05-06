@@ -11,39 +11,33 @@ const Banner = () => {
         setIndex(selectedIndex);
     };
     return (
-        <Container>
-            <Row>
-                <Col sm={12} md={6}>
-                    <Carousel className='carousel-container' activeIndex={index} onSelect={handleSelect}>
+        <>
+                    <Carousel className='mb-5' activeIndex={index} onSelect={handleSelect}>
                         <Carousel.Item>
                             <img
-                                className="rounded d-block w-100"
+                                className="d-block w-100 carousel-container img-fluid"
                                 src="http://surl.li/gvmzm"
                                 alt="First slide"
                             />
                         </Carousel.Item>
                         <Carousel.Item>
                             <img
-                                className="d-block w-100"
-                                src="http://surl.li/gvnaf"
+                                className="d-block w-100 carousel-container img-fluid"
+                                src="http://surl.li/gvnmr"
                                 alt="Second slide"
                             />
                         </Carousel.Item>
-                        <Carousel.Item className='div-container'>
+                        <Carousel.Item>
                             <img
-                                className="d-block w-100"
+                                className="d-block w-100 carousel-container img-fluid"
                                 src="http://surl.li/gvmzr"
                                 alt="Third slide"
                             />
                         </Carousel.Item>
                     </Carousel>
-                </Col>
-                <Col sm={12} md={6}>
-                    <Lottie animationData={chefBanner} className='h-75'  loop={true}></Lottie>
-                </Col>
-            </Row>
+               
 
-        </Container>
+        </>
     );
 };
 
