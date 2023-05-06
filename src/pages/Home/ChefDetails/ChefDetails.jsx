@@ -7,7 +7,6 @@ const ChefDetails = () => {
     const {id} = useParams();
     const [chef, setChef] = useState([]);
     const chefDetailsData = useLoaderData();
-    // const { recipe_name, image, ingredients, cooking_method, rating } = chefDetailsData[0]
     const { name, year_of_experience, number_of_recipes, likes, img, short_bio } = chef;
     useEffect(() => {
         fetch(`http://localhost:5000/chef/${id}`)

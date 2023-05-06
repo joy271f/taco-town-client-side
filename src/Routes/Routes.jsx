@@ -8,6 +8,7 @@ import Home from '../pages/Home/Home/Home';
 import Login from '../pages/Login/Login/Login';
 import Register from '../pages/Login/Register/Register';
 import ChefDetails from '../pages/Home/ChefDetails/ChefDetails';
+import PrivetRoute from './PrivetRoute';
 
 const router = createBrowserRouter([
   {
@@ -28,8 +29,10 @@ const router = createBrowserRouter([
       },
       {
         path: '/chef-details/:id',
-        element: <ChefDetails />,
-        loader: ({params}) => fetch(`http://localhost:5000/chef-details/${params.id}`)
+        element: <PrivetRoute>
+          <ChefDetails />
+        </PrivetRoute>,
+        loader: ({ params }) => fetch(`http://localhost:5000/chef-details/${params.id}`)
       }
     ]
   }

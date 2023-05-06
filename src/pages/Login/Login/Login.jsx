@@ -1,29 +1,34 @@
 import React, { useContext, useState } from 'react';
 import { Button, Col, Container, Form, Row } from 'react-bootstrap';
-import { Link, Navigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import GoogleSignIn from '../GoogleSignIn/GoogleSignIn';
 import { AuthContext } from '../../../Provider/AuthProvider';
 import { toast } from 'react-toastify';
 
 const Login = () => {
-    const {user, loginUser} = useContext(AuthContext)
+    const { user, loginUser } = useContext(AuthContext)
+    const navigate = useNavigate();
+    const location = useLocation();
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [success, setSuccess] = useState("")
     const [error, setError] = useState("")
 
+    const from = location.state?.from?.pathname || '/';
+
     const handleLogin = (e) => {
         e.preventDefault()
-        if(email, password){
+        if (email, password) {
             loginUser(email, password)
-            .then(result => {
-                const user = result.user;
-                toast.success("Logged in")
-                setSuccess("You are Login")
-            }).catch(error => {
-                setError(error.message)
-                toast.error("User Not Found")
-            })
+                .then(result => {
+                    const user = result.user;
+                    toast.success("Logged in")
+                    setSuccess("You are Login")
+                    navigate(from, { replace: true })
+                }).catch(error => {
+                    setError(error.message)
+                    toast.error("User Not Found")
+                })
         }
     }
 
@@ -46,7 +51,6 @@ const Login = () => {
                         <Button onClick={handleLogin} variant="primary" type="submit" className='w-25'>
                             Login
                         </Button> <br />
-                        {user && <Navigate to="/" replace={true} />}
                         <Form.Text className="text-secondary">
                             Dont’t Have An Account ? <Link to='/register'>Register</Link>
                         </Form.Text> <br />
