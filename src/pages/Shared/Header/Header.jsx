@@ -21,7 +21,7 @@ const Header = () => {
     return (
         <Navbar collapseOnSelect expand="lg" className='navbar-color' variant="dark">
             <Container>
-                <Image src="/public/chef-hat.png" className='banner-logo ps-5' />
+                <Link to="/"><Image src="/public/chef-hat.png" className='banner-logo ps-5' /></Link>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mx-auto ps-3">

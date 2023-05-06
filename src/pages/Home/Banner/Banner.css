@@ -1,3 +1,14 @@
-.carousel-container{
-    height: 90vh;
+.carousel-img{
+      width: 100vw;
+      height: 75vh;
+      object-fit: cover;
 }
+
+@media screen and (max-width: 576px) {
+      .carousel-img{
+            width: 100vw;
+            height: 30vh;
+            object-fit: cover;
+      }
+      
+    }

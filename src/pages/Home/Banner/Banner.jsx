@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { Carousel, Col, Container, Row } from 'react-bootstrap';
+import { Carousel } from 'react-bootstrap';
 import './Banner.css';
-import Lottie from "lottie-react";
-import chefBanner from '../../../../public/chef-banner.json'
+import img1 from '../../../../public/img1.jpg'
+import img2 from '../../../../public/img2.jpg'
+import img3 from '../../../../public/img3.jpg'
 
 const Banner = () => {
     const [index, setIndex] = useState(0);
@@ -11,33 +12,31 @@ const Banner = () => {
         setIndex(selectedIndex);
     };
     return (
-        <>
-                    <Carousel className='mb-5' activeIndex={index} onSelect={handleSelect}>
-                        <Carousel.Item>
-                            <img
-                                className="d-block w-100 carousel-container img-fluid"
-                                src="http://surl.li/gvmzm"
-                                alt="First slide"
-                            />
-                        </Carousel.Item>
-                        <Carousel.Item>
-                            <img
-                                className="d-block w-100 carousel-container img-fluid"
-                                src="http://surl.li/gvnmr"
-                                alt="Second slide"
-                            />
-                        </Carousel.Item>
-                        <Carousel.Item>
-                            <img
-                                className="d-block w-100 carousel-container img-fluid"
-                                src="http://surl.li/gvmzr"
-                                alt="Third slide"
-                            />
-                        </Carousel.Item>
-                    </Carousel>
-               
-
-        </>
+        <div>
+            <Carousel className='mb-5' activeIndex={index} onSelect={handleSelect}>
+                <Carousel.Item>
+                    <img
+                        className="d-block w-100 carousel-img img-fluid"
+                        src={img1}
+                        alt="First slide"
+                    />
+                </Carousel.Item>
+                <Carousel.Item>
+                    <img
+                        className="d-block w-100 carousel-img img-fluid"
+                        src={img2}
+                        alt="Second slide"
+                    />
+                </Carousel.Item>
+                <Carousel.Item>
+                    <img
+                        className="d-block w-100 carousel-img img-fluid"
+                        src={img3}
+                        alt="Third slide"
+                    />
+                </Carousel.Item>
+            </Carousel>
+        </div>
     );
 };
 

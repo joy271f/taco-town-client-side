@@ -9,11 +9,13 @@ import Login from '../pages/Login/Login/Login';
 import Register from '../pages/Login/Register/Register';
 import ChefDetails from '../pages/Home/ChefDetails/ChefDetails';
 import PrivetRoute from './PrivetRoute';
+import ErrorPage from '../pages/Shared/ErrorPage/ErrorPage';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Main />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: '/',
