@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Button, Container, Image, Nav, Navbar } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import './Header.css';
 import { AuthContext } from '../../../Provider/AuthProvider';
 import { toast } from 'react-toastify';
@@ -25,18 +25,21 @@ const Header = () => {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mx-auto ps-3">
-                        <Link className='text-white mx-3 text-decoration-none fs-6' to="/">Home</Link>
-                        <Link className='text-white mx-4 text-decoration-none fs-6' to="/">Blog</Link>
+                        <NavLink className='nav-text-color mx-3 text-decoration-none fs-6' to="/">Home</NavLink>
+                        <NavLink className='nav-text-color mx-4 text-decoration-none fs-6' to="/blog">Blog</NavLink>
                     </Nav>
                     {
                         user?.email ?
-                        <>
-                                <Image src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" className='header-img' roundedCircle/>
-                                <Link onClick={handleLogout}><Button className='button-color fs-5'>Logout</Button></Link>
+                            <>
+                                <Image src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" className='header-img' roundedCircle />
+                                <NavLink onClick={handleLogout} className='nav-text-color mx-4 text-decoration-none fs-6'>Logout</NavLink>
                             </> :
-                            <Link to='/login'><Button className='button-color fs-5'>Login</Button></Link>
+                            <>
+                                <NavLink className='nav-text-color mx-4 text-decoration-none fs-6' to="/login">Login</NavLink>
+                            </>
                     }
-                    {!user && <Link to='/register'><Button className='button-color fs-5'>Register</Button></Link>}
+                    {!user && 
+                    <NavLink className='nav-text-color mx-4 text-decoration-none fs-6' to="/register">Register</NavLink>}
                 </Navbar.Collapse>
             </Container>
         </Navbar>

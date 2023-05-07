@@ -10,6 +10,7 @@ import Register from '../pages/Login/Register/Register';
 import ChefDetails from '../pages/Home/ChefDetails/ChefDetails';
 import PrivetRoute from './PrivetRoute';
 import ErrorPage from '../pages/Shared/ErrorPage/ErrorPage';
+import Blog from '../pages/Blog/Blog';
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home />
+      },
+      {
+        path:'/blog',
+        element: <Blog />
       },
       {
         path: '/login',

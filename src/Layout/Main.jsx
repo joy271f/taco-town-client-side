@@ -9,9 +9,9 @@ const Main = () => {
     return (
         <div>
             <Header />
-            <Outlet />
+            <div style={{minHeight: "calc(100vh - 265px)"}}><Outlet /></div>
             <Footer />
-            <ToastContainer theme="colored"/>
+            <ToastContainer theme="colored" />
         </div>
     );
 };
