@@ -1,6 +1,7 @@
 
 .banner-logo{
-    height: 90px;
+    height: 65px;
+    object-fit: contain;
 }
 
 .navbar-color{
@@ -21,6 +22,7 @@
 
 .header-img{
     height: 50px;
+    object-fit: contain;
 }
 
 

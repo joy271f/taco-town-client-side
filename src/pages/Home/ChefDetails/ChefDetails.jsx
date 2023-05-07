@@ -37,7 +37,7 @@ const ChefDetails = () => {
                         <Col lg={4} sm={12}>
                             <h2 className='my-5 text-danger'>Chef Details</h2>
                             <Card className='' style={{ width: '23rem' }}>
-                                <Card.Img variant="top" style={{ objectFit: 'cover' }} src={img} />
+                                <Card.Img variant="top" style={{height: "40vh", objectFit: 'contain' }} src={img} />
                                 <Card.Body>
                                     <Card.Title>{name}</Card.Title>
                                     <Card.Text className='mb-4'>

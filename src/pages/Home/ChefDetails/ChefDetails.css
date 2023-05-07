@@ -2,6 +2,7 @@
   width: 50rem;
 }
 .details-card-img {
+  height: 60vh;
   object-fit: cover;
 }
 
@@ -17,5 +18,9 @@
 @media screen and (max-width: 576px) {
   .card-size{
     width: 23rem;
+  }
+  .details-card-img {
+    height: 30vh;
+    object-fit: cover;
   }
 }

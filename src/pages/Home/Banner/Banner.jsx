@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Carousel } from 'react-bootstrap';
 import './Banner.css';
-import img1 from '../../../../public/img1.jpg'
+import img1 from '../../../../public/img1.webp'
 import img2 from '../../../../public/img2.jpg'
 import img3 from '../../../../public/img3.jpg'
 
