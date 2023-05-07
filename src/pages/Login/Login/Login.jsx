@@ -33,39 +33,33 @@ const Login = () => {
     }
 
     return (
-        <Container className='w-50 mt-5'>
-            <Row>
-                <Col sm={8}>
-                    <h3>Please login</h3>
-                    <Form>
-                        <Form.Group className="mb-3" controlId="formBasicEmail">
-                            <Form.Label>Email address</Form.Label>
-                            <Form.Control onChange={(e) => setEmail(e.target.value)} type="email" name='email' placeholder="Enter email" required />
-                        </Form.Group>
+        <Container className='w-25 mt-5 mx-auto'>
+            <h3>Please login</h3>
+            <Form>
+                <Form.Group className="mb-3" controlId="formBasicEmail">
+                    <Form.Label>Email address</Form.Label>
+                    <Form.Control onChange={(e) => setEmail(e.target.value)} type="email" name='email' placeholder="Enter email" required />
+                </Form.Group>
 
-                        <Form.Group className="mb-3" controlId="formBasicPassword">
-                            <Form.Label>Password</Form.Label>
-                            <Form.Control onChange={(e) => setPassword(e.target.value)} type="password" name='password' placeholder="Password" required />
-                        </Form.Group>
+                <Form.Group className="mb-3" controlId="formBasicPassword">
+                    <Form.Label>Password</Form.Label>
+                    <Form.Control onChange={(e) => setPassword(e.target.value)} type="password" name='password' placeholder="Password" required />
+                </Form.Group>
 
-                        <Button onClick={handleLogin} variant="primary" type="submit" className='w-25'>
-                            Login
-                        </Button> <br />
-                        <Form.Text className="text-secondary">
-                            Dont’t Have An Account ? <Link to='/register'>Register</Link>
-                        </Form.Text> <br />
-                        <Form.Text className="text-success">
-                            {success}
-                        </Form.Text>
-                        <Form.Text className="text-danger">
-                            {error}
-                        </Form.Text>
-                    </Form>
-                </Col>
-                <Col sm={4}>
-                    <GoogleSignIn></GoogleSignIn>
-                </Col>
-            </Row>
+                <Button onClick={handleLogin} variant="primary" type="submit" className='w-100 '>
+                    Login
+                </Button> <br />
+                <Form.Text className="text-secondary">
+                    <span className='mx-5'>Dont’t Have An Account ? <Link to='/register'>Register</Link></span>
+                </Form.Text> <br />
+                <Form.Text className="text-success">
+                    {success}
+                </Form.Text>
+                <Form.Text className="text-danger">
+                    {error}
+                </Form.Text>
+            </Form>
+            <GoogleSignIn></GoogleSignIn>
 
         </Container>
     );

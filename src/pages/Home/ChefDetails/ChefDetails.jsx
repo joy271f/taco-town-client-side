@@ -4,11 +4,11 @@ import { useLoaderData, useParams } from 'react-router-dom';
 import './ChefDetails.css';
 import Rating from 'react-rating';
 import { FaRegStar, FaStar } from 'react-icons/fa';
+import { toast } from 'react-toastify';
 
 
 
 const ChefDetails = () => {
-
 
     const { id } = useParams();
     const [chef, setChef] = useState([]);
@@ -21,6 +21,11 @@ const ChefDetails = () => {
     }, [])
 
 
+    const handleFavoriteBtn = (e) => {
+        toast.success("Favorite Added")
+        const button = e.target;
+        button.disabled = true;
+    }
 
 
     return (
@@ -32,7 +37,7 @@ const ChefDetails = () => {
                         <Col lg={4} sm={12}>
                             <h2 className='my-5 text-danger'>Chef Details</h2>
                             <Card className='' style={{ width: '23rem' }}>
-                                <Card.Img variant="top" style={{objectFit: 'cover'}} src={img} />
+                                <Card.Img variant="top" style={{ objectFit: 'cover' }} src={img} />
                                 <Card.Body>
                                     <Card.Title>{name}</Card.Title>
                                     <Card.Text className='mb-4'>
@@ -73,7 +78,7 @@ const ChefDetails = () => {
                                                     <span className='text-danger'>Cooking Method:</span> {chefDetails?.cooking_method}
                                                 </Card.Text>
                                             </Card.Body>
-                                            <Button className='ms-3 my-3 button-color'>Favorite</Button>
+                                            <Button onClick={(e) => handleFavoriteBtn(e)} className='ms-3 my-3 button-color'>Favorite</Button>
                                         </Card>
                                     </div>
                                 ))

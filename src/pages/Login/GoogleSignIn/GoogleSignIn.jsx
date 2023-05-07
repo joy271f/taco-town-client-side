@@ -41,7 +41,7 @@ const GoogleSignIn = () => {
             })
     }
     return (
-        <div className='mt-5'>
+        <div className='mt-5 w-75 mx-auto'>
             <Button bg='light' onClick={handleGoogleSignIn} variant='primary' className='w-100 my-2'><FaGoogle /> Sign in with Google</Button>
             <Button bg='dark' onClick={handleGithubSignIn} variant='dark' className='w-100 my-2'><FaGithub /> Sign in with Github</Button>
         </div>

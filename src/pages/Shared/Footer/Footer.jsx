@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaFacebook, FaGithub, FaGoogle, FaHome, FaInstagram, FaLinkedin, FaPhone, FaTwitter, FaVoicemail } from 'react-icons/fa';
+import {  FaGithub,  FaHome, FaLinkedin, FaPhone, FaVoicemail } from 'react-icons/fa';
+import './Footer.css'
 
 const Footer = () => {
     return (
@@ -22,22 +23,10 @@ const Footer = () => {
 
                     {/* Right  */}
                     <div>
-                        <Link to="" className="text-white me-4">
-                            <FaFacebook />
-                        </Link>
-                        <Link to="" className="text-white me-4">
-                            <FaTwitter />
-                        </Link>
-                        <Link to="" className="text-white me-4">
-                            <FaGoogle />
-                        </Link>
-                        <Link to="" className="text-white me-4">
-                            <FaInstagram />
-                        </Link>
-                        <Link to="" className="text-white me-4">
+                        <Link to="https://www.linkedin.com/in/joychandradas/" className="text-white me-4">
                             <FaLinkedin />
                         </Link>
-                        <Link to="" className="text-white me-4">
+                        <Link to="https://github.com/joychandradas" className="text-white me-4">
                             <FaGithub />
                         </Link>
                     </div>
@@ -73,16 +62,16 @@ const Footer = () => {
                                     style={{ width: '60px', backgroundColor: '#7c4dff', height: '2px' }}
                                 />
                                 <p>
-                                    <Link to="#!" className="text-white">Pico de Gallo</Link>
+                                    <Link to="#!" className="text-white td-none">Pico de Gallo</Link>
                                 </p>
                                 <p>
-                                    <Link to="#!" className="text-white">Huevos Rancheros</Link>
+                                    <Link to="#!" className="text-white td-none">Huevos Rancheros</Link>
                                 </p>
                                 <p>
-                                    <Link to="#!" className="text-white">Chimichangas</Link>
+                                    <Link to="#!" className="text-white td-none">Chimichangas</Link>
                                 </p>
                                 <p>
-                                    <Link to="#!" className="text-white">Tostadas</Link>
+                                    <Link to="#!" className="text-white td-none">Tostadas</Link>
                                 </p>
                             </div>
                             {/* Grid column  */}
@@ -96,16 +85,16 @@ const Footer = () => {
                                     style={{ width: '60px', backgroundColor: '#7c4dff', height: '2px' }}
                                 />
                                 <p>
-                                    <Link to="#!" className="text-white">Javier Plascencia</Link>
+                                    <Link to="#!" className="text-white td-none">Javier Plascencia</Link>
                                 </p>
                                 <p>
-                                    <Link to="#!" className="text-white">David Castro Hussong</Link>
+                                    <Link to="#!" className="text-white td-none">David Castro Hussong</Link>
                                 </p>
                                 <p>
-                                    <Link to="#!" className="text-white">Margarita Carrillo Arronte</Link>
+                                    <Link to="#!" className="text-white td-none">Margarita Carrillo Arronte</Link>
                                 </p>
                                 <p>
-                                    <Link to="#!" className="text-white">Enrique Olvera</Link>
+                                    <Link to="#!" className="text-white td-none">Enrique Olvera</Link>
                                 </p>
                             </div>
                             {/* Grid column  */}
