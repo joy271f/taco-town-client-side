@@ -4,6 +4,7 @@ import { Link, NavLink } from 'react-router-dom';
 import './Header.css';
 import { AuthContext } from '../../../Provider/AuthProvider';
 import { toast } from 'react-toastify';
+import logo from '../../../../public/chef-hat.png'
 
 const Header = () => {
     const { user, logout } = useContext(AuthContext);
@@ -21,7 +22,7 @@ const Header = () => {
     return (
         <Navbar collapseOnSelect expand="lg" className='navbar-color' variant="dark">
             <Container>
-                <Link to="/"><Image src="/public/chef-hat.png" className='banner-logo ps-5' /></Link>
+                <Link to="/"><Image src={logo} className='banner-logo ps-5' /></Link>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mx-auto ps-3">

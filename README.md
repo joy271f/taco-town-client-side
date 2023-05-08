@@ -30,7 +30,7 @@ We also provide valuable tips and tricks on various cooking techniques, from bas
 
 | Parameter | Type     | Description                |
 | :-------- | :------- | :------------------------- |
-| `api_key` | `string` | http://localhost:5000/chef |
+| `api_key` | `string` | https://chef-hat-server-side-whitehut3q-gmailcom.vercel.app/chef |
 
 
 #### Get item
@@ -41,7 +41,7 @@ We also provide valuable tips and tricks on various cooking techniques, from bas
 
 | Parameter | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
-| `id`      | `string` | http://localhost:5000/chef/1 |
+| `id`      | `string` | https://chef-hat-server-side-whitehut3q-gmailcom.vercel.app/chef/1 |
 
 ```http
   GET /api/items
@@ -49,7 +49,7 @@ We also provide valuable tips and tricks on various cooking techniques, from bas
 
 | Parameter | Type     | Description                |
 | :-------- | :------- | :------------------------- |
-| `api_key` | `string` | http://localhost:5000/chef-details |
+| `api_key` | `string` | https://chef-hat-server-side-whitehut3q-gmailcom.vercel.app/chef-details |
 
 ```http
   GET /api/items/${id}
@@ -57,7 +57,7 @@ We also provide valuable tips and tricks on various cooking techniques, from bas
 
 | Parameter | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
-| `id`      | `string` | http://localhost:5000/chef-details/1|
+| `id`      | `string` | https://chef-hat-server-side-whitehut3q-gmailcom.vercel.app/chef-details/1|
 
 
 

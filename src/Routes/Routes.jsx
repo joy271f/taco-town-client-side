@@ -23,7 +23,7 @@ const router = createBrowserRouter([
         element: <Home />
       },
       {
-        path:'/blog',
+        path: '/blog',
         element: <Blog />
       },
       {
@@ -39,7 +39,7 @@ const router = createBrowserRouter([
         element: <PrivetRoute>
           <ChefDetails />
         </PrivetRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5000/chef-details/${params.id}`)
+        loader: ({ params }) => fetch(`https://chef-hat-server-side-whitehut3q-gmailcom.vercel.app/chef-details/${params.id}`)
       }
     ]
   }

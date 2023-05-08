@@ -15,7 +15,7 @@ const ChefDetails = () => {
     const chefDetailsData = useLoaderData();
     const { name, year_of_experience, number_of_recipes, likes, img, short_bio } = chef;
     useEffect(() => {
-        fetch(`http://localhost:5000/chef/${id}`)
+        fetch(`https://chef-hat-server-side-whitehut3q-gmailcom.vercel.app/chef/${id}`)
             .then(res => res.json())
             .then(data => setChef(data))
     }, [])
