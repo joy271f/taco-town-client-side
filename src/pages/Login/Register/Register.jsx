@@ -6,7 +6,7 @@ import { AuthContext } from '../../../Provider/AuthProvider';
 import { toast } from 'react-toastify';
 
 const Register = () => {
-    const { user, registerUser } = useContext(AuthContext);
+    const { user, registerUser, updateUserProfile } = useContext(AuthContext);
     const [name, setName] = useState("");
     const [photoURL, setPhotoURL] = useState("")
     const [email, setEmail] = useState("")
@@ -21,18 +21,21 @@ const Register = () => {
             setError("At least one upper case")
             return;
         }
-        if (email, password, photoURL) {
-            registerUser(email, password, photoURL)
+        if (email, password, name, photoURL ) {
+            registerUser(email, password, name, photoURL )
                 .then(result => {
                     const user = result.user;
                     toast.success("Registered")
                     setSuccess("You are registered")
+                    updateUserProfile(name, photoURL)
                 }).catch(error => {
                     setError(error.message)
                     toast.error("Error")
                 })
         }
     }
+
+        
 
 
     return (

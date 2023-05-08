@@ -1,12 +1,12 @@
 import React, { useContext } from 'react';
-import { Button, Container, Image, Nav, Navbar } from 'react-bootstrap';
+import { Button, Container, Image, Nav, Navbar, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import { Link, NavLink } from 'react-router-dom';
 import './Header.css';
 import { AuthContext } from '../../../Provider/AuthProvider';
 import { toast } from 'react-toastify';
 
 const Header = () => {
-    const { user, logout } = useContext(AuthContext);
+    const { user, logout, updateUserProfile } = useContext(AuthContext);
     const handleLogout = () => {
         logout()
             .then(result => {
@@ -31,15 +31,34 @@ const Header = () => {
                     {
                         user?.email ?
                             <>
-                                <Image src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" className='header-img' roundedCircle />
+
+                                <OverlayTrigger
+                                    placement="bottom"
+                                    overlay={<Tooltip id="button-tooltip-2">JOY</Tooltip>}
+                                >
+                                    {({ ref, ...triggerHandler }) => (
+                                        <Button
+                                            variant="dark"
+                                            {...triggerHandler}
+                                            className="d-inline-flex align-items-center"
+                                        >
+                                            <Image
+                                                ref={ref}
+                                                roundedCircle
+                                                className='header-img'
+                                                src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+                                            />
+                                        </Button>
+                                    )}
+                                </OverlayTrigger>
                                 <NavLink onClick={handleLogout} className='nav-text-color mx-4 text-decoration-none fs-6'>Logout</NavLink>
                             </> :
                             <>
                                 <NavLink className='nav-text-color mx-4 text-decoration-none fs-6' to="/login">Login</NavLink>
                             </>
                     }
-                    {!user && 
-                    <NavLink className='nav-text-color mx-4 text-decoration-none fs-6' to="/register">Register</NavLink>}
+                    {!user &&
+                        <NavLink className='nav-text-color mx-4 text-decoration-none fs-6' to="/register">Register</NavLink>}
                 </Navbar.Collapse>
             </Container>
         </Navbar>
