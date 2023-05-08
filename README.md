@@ -4,7 +4,7 @@
 
 Welcome to our chef website! Here, we are dedicated to sharing our passion for cooking and helping you elevate your culinary skills. Whether you're a beginner or an experienced cook, we have something for everyone.
 
-![photo](http://localhost:5173/public/img1.webp)
+![photo](https://c4.wallpaperflare.com/wallpaper/798/279/820/girl-creative-fire-cook-wallpaper-preview.jpg)
 
 Our website offers a wide range of recipes, from traditional classics to innovative and modern dishes. We believe that cooking should be fun and approachable, and we aim to provide recipes that are easy to follow and delicious to taste.
 
