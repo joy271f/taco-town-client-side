@@ -10,13 +10,15 @@ const Blog = () => {
     return (
         <div>
             <Container className='my-5'>
-                <h3 className='text-center text-danger my-5'>Welcome to my blog page</h3>
-                <Pdf targetRef={ref} filename="blog.pdf">
+                <h3 className='text-center text-danger my-5'>Latest Blogs</h3>
+                <div className='text-center'>
+                    <Pdf targetRef={ref} filename="blog.pdf" className="m-auto">
                     {({ toPdf }) => <Button className='mx-auto mb-3 bg-danger' onClick={toPdf}>Generate Pdf</Button>}
-                </Pdf>
-                <div ref={ref} className="row">
-                    <div className="col col-md-4">
-                        <Card className='mb-5' style={{ width: '22rem' }}>
+                    </Pdf>
+                </div>
+                <div ref={ref} className="row text-start">
+                    <div className="col col-md-4 d-flex align-items-stretch">
+                        <Card className='mb-5'>
                             <Card.Img variant="top" className='blog-card-img mb-3' src="https://community.nasscom.in/sites/default/files/styles/960_x_600/public/media/images/Control%20%26%20Uncontrolled%20Components_Nasscom.png?itok=_1te-kaH" />
                             <Card.Body>
                                 <Card.Title>What is the differences between uncontrolled and controlled components ?</Card.Title>
@@ -26,8 +28,8 @@ const Blog = () => {
                             </Card.Body>
                         </Card>
                     </div>
-                    <div className="col col-md-4">
-                        <Card className='mb-5' style={{ width: '22rem' }}>
+                    <div className="col col-md-4  d-flex align-items-stretch">
+                        <Card className='mb-5'>
                             <Card.Img variant="top" className='blog-card-img mb-3' src="https://i.ytimg.com/vi/SKqFMYOSy4g/maxresdefault.jpg" />
                             <Card.Body>
                                 <Card.Title>How to validate React props using PropTypes</Card.Title>
@@ -37,8 +39,8 @@ const Blog = () => {
                             </Card.Body>
                         </Card>
                     </div>
-                    <div className="col col-md-4">
-                        <Card className='mb-5' style={{ width: '22rem' }}>
+                    <div className="col col-md-4 d-flex align-items-stretch">
+                        <Card className='mb-5'>
                             <Card.Img variant="top" className='blog-card-img mb-3' src="http://gg.gg/13y2ix" />
                             <Card.Body>
                                 <Card.Title>what is difference between nodejs and express js ?</Card.Title>
@@ -48,8 +50,8 @@ const Blog = () => {
                             </Card.Body>
                         </Card>
                     </div>
-                    <div className="col col-md-4">
-                        <Card className='mb-5' style={{ width: '22rem' }}>
+                    <div className="col col-md-4 d-flex align-items-stretch m-auto">
+                        <Card className='mb-5'>
                             <Card.Img variant="top" className='blog-card-img mb-3' src="http://gg.gg/13y1tw" />
                             <Card.Body>
                                 <Card.Title>What is a custom hook, and why will you create a custom hook?</Card.Title>

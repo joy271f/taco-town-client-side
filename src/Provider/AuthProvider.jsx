@@ -40,9 +40,9 @@ const AuthProvider = ({ children }) => {
     }
 
     const updateUserProfile =(name, photoURL) => {
-        return updateProfile(user, 
-                console.log(name,photoURL)
-            )
+        return updateProfile(auth.currentUser, {
+            displayName: name, photoURL: photoURL
+        });
     }
     useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, (loggedInUser) => {

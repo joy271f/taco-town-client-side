@@ -6,7 +6,7 @@ import { AuthContext } from '../../../Provider/AuthProvider';
 import { toast } from 'react-toastify';
 
 const Header = () => {
-    const { user, logout, updateUserProfile } = useContext(AuthContext);
+    const { user, logout } = useContext(AuthContext);
     const handleLogout = () => {
         logout()
             .then(result => {
@@ -29,12 +29,12 @@ const Header = () => {
                         <NavLink className='nav-text-color mx-4 text-decoration-none fs-6' to="/blog">Blog</NavLink>
                     </Nav>
                     {
-                        user?.email ?
+                        user ?
                             <>
 
                                 <OverlayTrigger
                                     placement="bottom"
-                                    overlay={<Tooltip id="button-tooltip-2">JOY</Tooltip>}
+                                    overlay={<Tooltip id="button-tooltip-2">{user?.displayName}</Tooltip>}
                                 >
                                     {({ ref, ...triggerHandler }) => (
                                         <Button
@@ -46,7 +46,7 @@ const Header = () => {
                                                 ref={ref}
                                                 roundedCircle
                                                 className='header-img'
-                                                src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+                                                src={user.displayName ? user.photoURL : "https://cdn-icons-png.flaticon.com/512/3135/3135715.png"}
                                             />
                                         </Button>
                                     )}

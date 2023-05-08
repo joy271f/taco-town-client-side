@@ -1,34 +1,40 @@
 import React, { useContext, useState } from 'react';
 import { Button, Col, Container, Form, Row } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import GoogleSignIn from '../GoogleSignIn/GoogleSignIn';
 import { AuthContext } from '../../../Provider/AuthProvider';
 import { toast } from 'react-toastify';
 
 const Register = () => {
     const { user, registerUser, updateUserProfile } = useContext(AuthContext);
-    const [show , setShow] =  useState(false);
+    const [show, setShow] = useState(false);
     const [name, setName] = useState("");
     const [photoURL, setPhotoURL] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [success, setSuccess] = useState("")
     const [error, setError] = useState("")
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    const from = location.state?.from?.pathname || '/';
 
     const handleRegistration = (e) => {
         e.preventDefault()
-        const form = e.target;
         if (!/(?=.*?[A-Z])/.test(password)) {
             setError("At least one upper case")
             return;
         }
-        if (email, password, name, photoURL ) {
-            registerUser(email, password, name, photoURL )
+        if (email, password, name, photoURL) {
+            registerUser(email, password, name, photoURL)
                 .then(result => {
                     const user = result.user;
                     toast.success("Registered")
                     setSuccess("You are registered")
-                    updateUserProfile(name, photoURL)
+                    navigate(from, { replace: true })
+                    updateUserProfile(name, photoURL).then(() => {
+                    })
+                        .catch(error => { toast.error(error.message); });
                 }).catch(error => {
                     setError(error.message)
                     toast.error("Error")
@@ -36,7 +42,7 @@ const Register = () => {
         }
     }
 
-        
+
 
 
     return (
@@ -66,7 +72,7 @@ const Register = () => {
                     {
                         show ? "Hide Password" : "Show Password"
                     }
-                    </small></p>
+                </small></p>
 
                 <Button onClick={handleRegistration} variant="primary" type="submit" className='w-100'>
                     Register
