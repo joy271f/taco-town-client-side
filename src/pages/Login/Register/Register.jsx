@@ -7,6 +7,7 @@ import { toast } from 'react-toastify';
 
 const Register = () => {
     const { user, registerUser, updateUserProfile } = useContext(AuthContext);
+    const [show , setShow] =  useState(false);
     const [name, setName] = useState("");
     const [photoURL, setPhotoURL] = useState("")
     const [email, setEmail] = useState("")
@@ -59,9 +60,13 @@ const Register = () => {
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Password</Form.Label>
-                    <Form.Control onChange={(e) => setPassword(e.target.value)} type="password" name='password' placeholder="Password" required />
+                    <Form.Control onChange={(e) => setPassword(e.target.value)} type={show ? "text" : "password"} name='password' placeholder="Password" required />
                 </Form.Group>
-
+                <p onClick={() => setShow(!show)}><small>
+                    {
+                        show ? "Hide Password" : "Show Password"
+                    }
+                    </small></p>
 
                 <Button onClick={handleRegistration} variant="primary" type="submit" className='w-100'>
                     Register

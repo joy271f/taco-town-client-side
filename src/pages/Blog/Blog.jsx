@@ -39,7 +39,7 @@ const Blog = () => {
                     </div>
                     <div className="col col-md-4">
                         <Card className='mb-5' style={{ width: '22rem' }}>
-                            <Card.Img variant="top" className='blog-card-img mb-3' src="https://shorturl.at/aryCK" />
+                            <Card.Img variant="top" className='blog-card-img mb-3' src="http://gg.gg/13y2ix" />
                             <Card.Body>
                                 <Card.Title>what is difference between nodejs and express js ?</Card.Title>
                                 <Card.Text>

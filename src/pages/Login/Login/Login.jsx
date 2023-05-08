@@ -7,6 +7,7 @@ import { toast } from 'react-toastify';
 
 const Login = () => {
     const { user, loginUser } = useContext(AuthContext)
+    const [show, setShow] = useState(false);
     const navigate = useNavigate();
     const location = useLocation();
     const [email, setEmail] = useState("")
@@ -43,8 +44,13 @@ const Login = () => {
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Password</Form.Label>
-                    <Form.Control onChange={(e) => setPassword(e.target.value)} type="password" name='password' placeholder="Password" required />
+                    <Form.Control onChange={(e) => setPassword(e.target.value)} type={show ? "text" : "password"} name='password' placeholder="Password" required />
                 </Form.Group>
+                <p onClick={() => setShow(!show)}><small>
+                    {
+                        show ? "Hide Password" : "Show Password"
+                    }
+                    </small></p>
 
                 <Button onClick={handleLogin} variant="primary" type="submit" className='w-100 '>
                     Login
