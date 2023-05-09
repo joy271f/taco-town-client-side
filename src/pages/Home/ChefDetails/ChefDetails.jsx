@@ -34,23 +34,6 @@ const ChefDetails = () => {
             {chef && chefDetailsData ?
                 <Container>
                     <Row>
-                        <Col lg={4} sm={12}>
-                            <h2 className='my-5 text-danger'>Chef Details</h2>
-                            <Card className='' style={{ width: '23rem' }}>
-                                <Card.Img variant="top" style={{ objectFit: 'contain' }} src={img} />
-                                <Card.Body>
-                                    <Card.Title>{name}</Card.Title>
-                                    <Card.Text className='mb-4'>
-                                        <span className='text-danger'></span> {short_bio}
-                                    </Card.Text>
-                                    <p className='mb-1'><span className='text-danger'>Year of Experience:</span> {year_of_experience}</p>
-                                    <p className='mb-1'><span className='text-danger'>Number of Recipe:</span> {number_of_recipes}</p>
-                                    <Card.Text className='mb-4'>
-                                        <span className='text-danger'>Likes:</span> {likes}
-                                    </Card.Text>
-                                </Card.Body>
-                            </Card>
-                        </Col>
                         <Col lg={8} sm={12}>
                             <h2 className='my-5 text-secondary mx-4'>{name}'s Recipes</h2>
                             {
@@ -83,6 +66,25 @@ const ChefDetails = () => {
                                     </div>
                                 ))
                             }
+                        </Col>
+                        <Col lg={4} sm={12}>
+                            <div  className='sticky-top'>
+                                <h2 className='my-5 text-danger'>Chef Details</h2>
+                                <Card style={{ width: '23rem' }}>
+                                    <Card.Img variant="top" style={{ objectFit: 'contain' }} src={img} />
+                                    <Card.Body>
+                                        <Card.Title>{name}</Card.Title>
+                                        <Card.Text className='mb-4'>
+                                            <span className='text-danger'></span> {short_bio}
+                                        </Card.Text>
+                                        <p className='mb-1'><span className='text-danger'>Year of Experience:</span> {year_of_experience}</p>
+                                        <p className='mb-1'><span className='text-danger'>Number of Recipe:</span> {number_of_recipes}</p>
+                                        <Card.Text className='mb-4'>
+                                            <span className='text-danger'>Likes:</span> {likes}
+                                        </Card.Text>
+                                    </Card.Body>
+                                </Card>
+                            </div>
                         </Col>
                     </Row>
                 </Container> :
